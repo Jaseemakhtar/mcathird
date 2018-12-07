@@ -11,31 +11,39 @@ public class PingClient {
         DatagramSocket socket;
         DatagramPacket packet;
         InetAddress ipaddr;
-        byte[] bytes = new byte[1024];
+        byte[] bytes;
         int n = 0;
         String str;
+        long sTime;
+        long rTime;
+        long cTime;
         
         try{
             socket = new DatagramSocket(7312);
             ipaddr = InetAddress.getByName("localhost");
+            
             while(n < 5){
-                long msSend = Calendar.getInstance().get(Calendar.MINUTE);
-                str = "PING " + n + " " + msSend + " \n";
+                
+                
+                str = "dummy packet";
                 bytes = str.getBytes();
                 packet = new DatagramPacket(bytes, bytes.length, ipaddr, 7313);
                 socket.send(packet);
-                
-                
+                sTime = new Date().getTime();
                 try{
                     byte[] rBytes = new byte[1024];
                     DatagramPacket rPacket = new DatagramPacket(rBytes, 0, rBytes.length);
-                    socket.setSoTimeout(5000);
-                    socket.receive(rPacket);
-                    String msg = new String(rBytes);
-                    System.out.println(msg);
+                    socket.setSoTimeout(5000); //setting timeout
+                    socket.receive(rPacket); //receive response
+                    rTime = new Date().getTime();
+                    cTime = rTime - sTime;
+                    
+                    System.out.println("Reply from " + rPacket.getAddress().toString() + ": time < " +
+                            cTime + "ms");
                 }catch(IOException ex){
-                    System.out.println("Timeout: " + n);
+                    System.out.println("Request Timeout: " + n);
                 }
+                Thread.sleep(1000);
                 n++;
             }
             
@@ -46,6 +54,9 @@ public class PingClient {
             System.out.println(ex.getMessage());
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        } catch (InterruptedException ex) {
+            System.out.println(ex.getMessage());
         }
+        
     }
 }

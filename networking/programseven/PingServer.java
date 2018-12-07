@@ -9,26 +9,26 @@ public class PingServer {
     public static void main(String[] args){
         DatagramSocket sock;
         DatagramPacket packet;
-        byte[] bytes = new byte[1024];
+        byte[] rBytes = new byte[1024];
         String msg;
-        
+        String str;
+        int n = 0;
         try {
             sock = new DatagramSocket(7313);
             
             System.out.println("Server started");
-            packet = new DatagramPacket(bytes, 0, bytes.length);
+            packet = new DatagramPacket(rBytes, 0, rBytes.length);
             
-            while(true){
+            while(n < 5){
                 sock.receive(packet);
-                
-                msg = new String(bytes);
-                System.out.println(msg);
-                
-                byte[] sBytes = new byte[1024];
-                sBytes = msg.getBytes();
-                DatagramPacket sPacket = new DatagramPacket(bytes,0, bytes.length, InetAddress.getByName("localhost"), 7312);
+                msg = new String(rBytes);
+                System.out.println(packet.getAddress().toString() + ": is Pinging");
+                byte[] sBytes;
+                str = "dummy packet";
+                sBytes = str.getBytes();
+                DatagramPacket sPacket = new DatagramPacket(sBytes,0, sBytes.length, InetAddress.getByName("localhost"), 7312);
                 sock.send(sPacket);
-                
+                n++;
             }
         } catch (SocketException ex) {
             System.out.println(ex.getMessage());
