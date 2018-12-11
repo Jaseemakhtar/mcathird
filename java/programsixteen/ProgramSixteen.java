@@ -63,9 +63,9 @@ class ProgramSixteen extends JFrame implements ActionListener{
             res = num1 / num2;
             textDisplay.setText(res + "");
         }catch(NumberFormatException e){
-            textDisplay.setText(e.getMessage());
+	    JOptionPane.showMessageDialog(this, e);
         }catch(ArithmeticException e){
-            textDisplay.setText(e.getMessage());
+	    JOptionPane.showMessageDialog(this, e);
         }
     }
     
