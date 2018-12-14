@@ -10,15 +10,13 @@ public class Combination {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        String read;
+
         int n = 0, k = 0;
         System.out.println("Enter the value for n");
-        read = input.nextLine();
-        n = Integer.valueOf(read);
+        n = input.nextInt();
         
         System.out.println("Enter the value for k");
-        read = input.nextLine();
-        k = Integer.valueOf(read);
+        k = input.nextInt();
         
         System.out.print(n + "C" + k + " = ");
         System.out.println(factorial(n) / (factorial(k) * factorial(n - k)));

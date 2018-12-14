@@ -8,14 +8,12 @@ public class GCD_LCM {
     public static void main(String[] args) {
         
         int gcd, lcm, n1, n2, tn1, tn2;
-        String read;
+
         Scanner input = new Scanner(System.in);
         System.out.println("Enter two numbers");
-        read = input.nextLine();
-        n1 = Integer.parseInt(read);
+        n1 = input.nextInt();
         tn1 = n1;
-        read = input.nextLine();
-        n2 = Integer.parseInt(read);
+        n2 = input.nextInt();
         tn2 = n2;
         
         while(n1 != n2){

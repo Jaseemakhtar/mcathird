@@ -13,7 +13,7 @@ public class PrimeNumber {
 	Scanner in = new Scanner(System.in);
 	System.out.println("Enter a Number :");
 
-	n = Integer.valueOf(in.nextLine());
+	n = in.nextInt();
 	m = n/2; 
 
 	if( n == 0 || n == 1 )

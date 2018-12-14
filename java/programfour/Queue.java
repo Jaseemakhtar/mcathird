@@ -14,7 +14,6 @@ public class Queue {
 
     public static void main(String[] args) {
         
-        String read;
         Scanner input = new Scanner(System.in);
         int option;
         
@@ -25,14 +24,13 @@ public class Queue {
             print("3.Display");
             print("4.Exit");
             print("Enter any option: ");
-            read = input.nextLine();
-            option = Integer.valueOf(read);
+            option = input.nextInt();
+
             switch(option){
                 case 1:
                     
                     print("Enter the value to enter");
-                    read  = input.nextLine();
-                    int val = Integer.valueOf(read);
+                    int val = input.nextInt();
                     insert(val);
                     break;
                 case 2:
