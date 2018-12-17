@@ -1,23 +1,7 @@
 class ConstructorDemo{
-	private String name;
-	private String rollno;
+	String name;
+	String rollno;
 	
-	public String getName(){
-		return name;
-	}
-
-	public String getRollno(){
-		return rollno;
-	}
-
-	
-	public void setName(String name){
-		this.name = name;
-	}
-
-	public void setRollno(String rollno){
-		this.rollno = rollno;
-	}
 
 	public ConstructorDemo(){
 		name = "";
@@ -31,8 +15,8 @@ class ConstructorDemo{
 	
 	public static void main(String[] args){
 		ConstructorDemo cD = new ConstructorDemo("Jaseem", "m181003");
-		System.out.println("Name: " + cD.getName() );
-		System.out.println("RollNo: " + cD.getRollno() );		
+		System.out.println("Name: " + cD.name );
+		System.out.println("RollNo: " + cD.rollno );		
 	}
 }
 
