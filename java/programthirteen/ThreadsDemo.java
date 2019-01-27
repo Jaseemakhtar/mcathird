@@ -12,13 +12,11 @@ public class ThreadsDemo{
 		th1.start();
 		th2.start();
 		th3.start();
-		
 	}
 }
 
 class ThreadOne extends Thread{
 	public void run(){
-
 		while(true){
 			try{
 				Thread.sleep(1000);
@@ -26,7 +24,6 @@ class ThreadOne extends Thread{
 			}catch(InterruptedException e){
 				System.out.println(e);
 			}
-
 		}
 	}
 }
@@ -56,4 +53,3 @@ class ThreadThree extends Thread{
 		}
 	}
 }
-

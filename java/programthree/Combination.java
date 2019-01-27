@@ -19,7 +19,8 @@ public class Combination {
         k = input.nextInt();
         
         System.out.print(n + "C" + k + " = ");
-        System.out.println(factorial(n) / (factorial(k) * factorial(n - k)));
+        System.out.println(factorial(n) / 
+(factorial(k) * factorial(n - k)));
     }
     
     public static int factorial(int n){
@@ -31,4 +32,3 @@ public class Combination {
     }
     
 }
-

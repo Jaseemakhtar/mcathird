@@ -1,3 +1,11 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+/**
+ *
+ * @author jaseem
+ */
+ 
 /*
 <applet code="StudentReport" width="400" height="400"> </applet>
 */
@@ -11,14 +19,11 @@ public class StudentReport extends Applet implements ActionListener{
 	Label lblRegno;
 	Label lblJava;
 	Label lblNetwork;
-
 	TextField txtName;
 	TextField txtRegno;
 	TextField txtJava;
 	TextField txtNetwork;
-
 	Button btnGenerate;
-
 	String name, regno, java, network;
 
 	public void init(){
@@ -74,6 +79,5 @@ public class StudentReport extends Applet implements ActionListener{
 		g.drawString("-------------------------------------------------------------", 0, 220);
 		g.drawString("  "+  name + "   |  " + regno + "   |    " + java + "   |    " + network, 0, 240);
 		g.drawString("-------------------------------------------------------------", 0, 260);
-
 	}
 }

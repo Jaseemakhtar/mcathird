@@ -5,11 +5,11 @@ import java.awt.event.*;
  *
  * @author jaseem
  */
-
-
+ 
 /*
 <applet code="ComputeFactorial" width="180" height="200" > </applet>
 */
+
 public class ComputeFactorial extends Applet implements ActionListener{
     int fib1 = 0, fib2 = 1 , fib3 = 0;
     TextField txtInput1;
@@ -27,20 +27,9 @@ public class ComputeFactorial extends Applet implements ActionListener{
         add(txtInput2);
         add(btnCompute);
     }
-    
-    
-    public void draw(Graphics g){
-        
-    }
 
     public void actionPerformed(ActionEvent e) {
-        
 	String input = txtInput1.getText();
-	input = input.trim();
-	if(input.equals("")){
-		return;
-	}
-	
 	int n = Integer.valueOf(input);
 	int sum = 1;
 	if(n < 2){

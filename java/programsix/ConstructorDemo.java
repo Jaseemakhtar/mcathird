@@ -1,11 +1,13 @@
+/**
+ *
+ * @author jaseem
+ */
 class ConstructorDemo{
-	String name;
-	String rollno;
+	String name = "none";
+	String rollno = "none";
 	
 
 	public ConstructorDemo(){
-		name = "";
-		rollno = "";
 	}
 
 	public ConstructorDemo(String name, String rollno){
@@ -14,9 +16,11 @@ class ConstructorDemo{
 	}
 	
 	public static void main(String[] args){
-		ConstructorDemo cD = new ConstructorDemo("Jaseem", "m181003");
-		System.out.println("Name: " + cD.name );
-		System.out.println("RollNo: " + cD.rollno );		
+ConstructorDemo cd = new ConstructorDemo("Jaseem",  "m181003");
+		System.out.println("Name: " + cd.name );
+		System.out.println("RollNo: " + cd.rollno );
+		ConstructorDemo cd2 = new ConstructorDemo();
+		System.out.println("Name: " + cd2.name );
+		System.out.println("RollNo: " + cd2.rollno );
 	}
 }
-

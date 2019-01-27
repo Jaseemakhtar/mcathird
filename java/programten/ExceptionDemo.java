@@ -3,7 +3,6 @@
  * @author jaseem
  */
 
-
 class ExceptionDemo{
 	public static void main(String[] args){
 		int a = 4;
@@ -23,4 +22,3 @@ class ExceptionDemo{
 		}
 	}
 }
-

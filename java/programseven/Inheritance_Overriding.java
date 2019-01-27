@@ -1,39 +1,36 @@
+/**
+ *
+ * @author jaseem
+ */
+
 public class Inheritance_Overriding{
 	public static void main(String[] args){
-		Manager manager = new Manager();
-		manager.setName("Jaseem");
-		manager.setId(7313);
-
-		System.out.println("Name: " + manager.getName() );
-		System.out.println("Id: " + manager.getId() );
+		Manager manager = new Manager("Mr.Robot", 7313);
+		
+		System.out.println("Name: " + manager.name );
+		System.out.println("Id: " + manager.id );
 		System.out.print("Work: " + manager.doesWork());				
 	}
 }
 
 class Employee{
-	private String name;
-	private int id;
-	public void setName(String name){
-		this.name = name;
+	String name;
+	int id;
+	
+	public Employee(String n, int i){
+		name = n;
+		id = i;
 	}
-	public void setId(int id){
-		this.id = id;
-	}
-	public String getName(){
-		return name;
-	}
-	public int getId(){
-		return id;
-	}
-
 	public String doesWork(){
 		return "Some Work";
 	}
 }
 
 class Manager extends Employee{
+	public Manager(String n, int i){
+		super(n, i);
+	}
 	public String doesWork(){
 		return "Sets goals for group or organization";
 	}
 }
-

@@ -1,20 +1,20 @@
+/**
+ *
+ * @author jaseem
+ */
 public class ThreadJoinExample {
-
     public static void main(String[] args) {
         MyThread t1 = new MyThread("t1");
         MyThread t2 = new MyThread("t2");
         MyThread t3 = new MyThread("t3");
-	
-        
         t1.start();
         
-
         try {
-        //start second thread after waiting for 2 seconds or if it's dead
-		t1.join(2000);
-	        t2.start();
+        //start 2nd thread after waiting for 2 seconds or if it's dead
+		  t1.join(2000);
+	      t2.start();
 
-	//start third thread only when first thread is dead
+	//start 3rd thread only when first thread is dead
 		t1.join();
 		t3.start();
 
@@ -24,11 +24,9 @@ public class ThreadJoinExample {
 		t3.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        
+        }   
         System.out.println("All threads are dead, exiting main thread");
     }
-
 }
 
 class MyThread extends Thread{
@@ -44,5 +42,4 @@ class MyThread extends Thread{
 		}
 		System.out.println("Thread ended: "+Thread.currentThread().getName());
 	}
-    
 }

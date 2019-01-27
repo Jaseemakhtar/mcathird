@@ -7,8 +7,7 @@ import javax.swing.*;
  * @author jaseem
  */
 
-public class BasicCalculator extends JFrame implements ActionListener{
-    
+public class BasicCalculator extends JFrame implements ActionListener{ 
     private char symbol;
     private int num1 = -1;
     private int num2 = -1;
@@ -33,7 +32,6 @@ public class BasicCalculator extends JFrame implements ActionListener{
     
     public BasicCalculator(){
         textField = new JTextField(11);
-        
         btnOne = new JButton("1");
         btnTwo = new JButton("2");
         btnThree = new JButton("3");
@@ -67,14 +65,10 @@ public class BasicCalculator extends JFrame implements ActionListener{
         btnPanel.add(btnSix);
         btnPanel.add(btnSeven);
         btnPanel.add(btnEight);
-        btnPanel.add(btnNine);
-        
+        btnPanel.add(btnNine);  
         btnPanel.add(btnPlus);
-        
-        btnPanel.add(btnZero);
-        
+        btnPanel.add(btnZero);        
         btnPanel.add(btnMinus);
-        
         btnPanel.add(btnMultiply);
         btnPanel.add(btnDivide);
         btnPanel.add(btnEquals);
@@ -104,7 +98,6 @@ public class BasicCalculator extends JFrame implements ActionListener{
     
     public static void main(String[] args) {
         BasicCalculator calc = new BasicCalculator();
-        
     }
     
     public void actionPerformed(ActionEvent ae){
@@ -113,15 +106,12 @@ public class BasicCalculator extends JFrame implements ActionListener{
         int res = 0;
         
         if(button.matches("[+-/*]")){
-            
             num1 = Integer.valueOf(input);
             textField.setText(""); 
-            symbol = button.charAt(0);
-            
+            symbol = button.charAt(0);            
         }else if(button.matches("[=]")){
             if(num1 == -1)
                 return;
-            
             num2 = Integer.valueOf(input);
             
             if( symbol == '+')

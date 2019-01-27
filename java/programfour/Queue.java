@@ -6,30 +6,27 @@ import java.util.*;
  */
 
 public class Queue {
-
     public static int MAX = 10;
     public static int[] queue = new int[MAX];
     public static int rear = 0;
     public static int front = 0;
 
     public static void main(String[] args) {
-        
         Scanner input = new Scanner(System.in);
         int option;
         
         while(true){
-            print("");
-            print("1.Insert");
-            print("2.Delete");
-            print("3.Display");
-            print("4.Exit");
-            print("Enter any option: ");
+            System.out.println("");
+            System.out.println("1.Insert");
+            System.out.println("2.Delete");
+            System.out.println("3.Display");
+            System.out.println("4.Exit");
+            System.out.println("Enter any option: ");
             option = input.nextInt();
 
             switch(option){
-                case 1:
-                    
-                    print("Enter the value to enter");
+                case 1:           
+                    System.out.println("Enter the value to enter");
                     int val = input.nextInt();
                     insert(val);
                     break;
@@ -43,21 +40,16 @@ public class Queue {
                     System.exit(0);
                     break;
                 default:
-                    print("Invalid Option");
-                    break;
-                    
+                    System.out.println("Invalid Option");
+                    break;      
             }
         }
     }
  
-    public static void print(Object msg){
-        System.out.println(String.valueOf(msg));
-    }
-    
     public static void insert(int val){
         if(rear >= MAX){
-            print("Queue is full");
-            print("");
+            System.out.println("Queue is full");
+            System.out.println("");
             return;
         }
         queue[rear] = val;
@@ -65,33 +57,33 @@ public class Queue {
     }
     
     public static void delete(){
-        print("");
+        System.out.println("");
         if(rear <= 0){
-            print("queue is empty");
-            print("");
+            System.out.println("queue is empty");
+            System.out.println("");
             return;
         }
         
-        for(int i=front; i < rear; i++){
+		System.out.println("deleted: " + queue[front]);
+		
+        for(int i = front; i < rear - 1; i++){
             int temp = queue[i + 1];
             queue[i] = temp;
         }
-        rear--;
+		rear--;
     }
     
     public static void display(){
-        print("");
+        System.out.println("");
         if(rear <= 0){
-            print("queue is empty");
-            print("");
+            System.out.println("queue is empty");
+            System.out.println("");
             return;
         }
         
-        print("Element in the queue are: ");
+        System.out.println("Element in the queue are: ");
         for(int i= 0; i < rear; i++){
-            print(queue[i]);
+            System.out.println(queue[i]);
         }
-    }
-    
+    }   
 }
-

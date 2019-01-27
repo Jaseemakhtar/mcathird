@@ -19,7 +19,6 @@ class UserDefinedException{
 
 class MyException extends Exception{
 	public String getMessage(){
-		return "The number is less than one";
+		return "Exception: The number is less than one";
 	}
 }
-

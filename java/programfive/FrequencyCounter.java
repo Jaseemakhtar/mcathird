@@ -41,7 +41,4 @@ class FrequencyCounter {
         
         System.out.println("Total Characters: " + line.length());
     }
-    
-    
 }
-

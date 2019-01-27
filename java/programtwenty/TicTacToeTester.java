@@ -7,28 +7,24 @@ import javax.swing.*;
  * @author jaseem
  */
 public class TicTacToeTester extends JFrame implements ActionListener{
-
     private JButton[] btns;
     private boolean playerClicked;
     private int[] board;
     
-    
     public TicTacToeTester(){
         btns = new JButton[9];
         board = new int[9];
-        
-        setLayout(new GridLayout(3,3));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(400, 400);
-        
+ 
         for(int i=0; i < btns.length; i++){
             btns[i] = new JButton();
             btns[i].setActionCommand(String.valueOf(i));
             btns[i].addActionListener(this);
             add(btns[i]);
-        }
-        
+        }       
         setTitle("TicTacToe Game");
+		setLayout(new GridLayout(3,3));
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(400, 400);
         setResizable(false);
         setVisible(true);
     }
@@ -36,7 +32,6 @@ public class TicTacToeTester extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton button = (JButton) e.getSource();
-        
         for(int i=0; i < btns.length; i++){
            if(button == btns[i]){
                if(playerClicked){
@@ -51,7 +46,7 @@ public class TicTacToeTester extends JFrame implements ActionListener{
                button.removeActionListener(this);
            }
         }
-        
+
         int player = 0;
         
         if(board[0] == board[1] && board[1] == board[2]){
@@ -98,10 +93,6 @@ public class TicTacToeTester extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(rootPane, "Draw");
                 dispose();
             }
-        }
-        
+        }  
     }
-    
-    
 }
-
