@@ -12,7 +12,7 @@ public class RCEClient {
         InputStream is;
         OutputStream os;
         DataOutputStream dos;
-
+		DataInputStream dis;
         Scanner scan = new Scanner(System.in);
         String cmd;
         
@@ -21,19 +21,12 @@ public class RCEClient {
             System.out.println("Connected to server: " + client.getInetAddress());
             System.out.println("Enter the command to execute remotely");
             cmd = scan.nextLine();
-            
             is = client.getInputStream();
             os = client.getOutputStream();
-            
+            dis = new DataInputStream(is);
             dos = new DataOutputStream(os);
             dos.writeUTF(cmd);
-            
-            int read;
-            byte[] bytes = new byte[1024 * 4];
-            while((read = is.read(bytes)) > 0){
-                String res = new String(bytes);
-                System.out.print(res);
-            }
+			System.out.println(dis.readUTF());
             os.flush();
             client.close();
             
