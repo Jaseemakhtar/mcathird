@@ -10,7 +10,7 @@
 		$query1 = "SELECT username, password FROM login WHERE username='".$username."' AND password='".$password."'";
 		$task = mysqli_query($conn, $query1);
 		// SELECT username FROM login WHERE
-		$check = "SELECT username, password FROM login WHERE username='".$username."' ";
+		$check = "SELECT username, password FROM user_details WHERE username='".$username."' ";
 		$uname = mysqli_query($conn, $check);
 		
 		if(mysqli_num_rows($task) > 0){
